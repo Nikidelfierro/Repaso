@@ -1,0 +1,36 @@
+header {
+    width: 100%;
+    background-color:rgb(235, 172, 172);
+    color: azure;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 1.5em 3em;
+}
+
+header > nav > ul{
+    display: flex;
+    list-style: none;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    overflow: hidden;
+}
+
+header > nav > ul > li {
+    padding: .5em 1em;
+    background-color: rgb(153, 125, 125);
+    border-radius: 0px;
+
+    transition: all .2s;
+}
+
+header > nav > ul > li:hover {
+    background-color:rgb(129, 106, 106) ;
+}
+
+header > nav > ul > li > a {
+    color: whitesmoke;
+    text-decoration: none;
+}

@@ -1,5 +1,4 @@
-//require path
-const path = require("path");
+
 //dotenv acceso a .env
 require("dotenv").config();
 
@@ -9,16 +8,16 @@ const express = require("express");
 //init express app
 const app = express();
 
-//require routes
-const homeRoutes = require ("./routes/home");
+//conf app
+app.use(express.static("src/views"));
 
-//use routes
-app.use(homeRoutes);
+//require routers
+const homeRoutes = require("./routes/home");
+const productRoutes = require("./routes/products");
 
-//1° get
-app.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname,"views/home.html"))
-});
+//use routers
+app.use("/", homeRoutes);
+app.use("/products", productRoutes);
 
 //start listening server
 app.listen(process.env.PORT, () => {console.log("Server listening on Port: ", process.env.PORT)});
